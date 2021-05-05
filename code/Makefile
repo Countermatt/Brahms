@@ -15,9 +15,9 @@ SRC_DIRS 	?= src
 LIB_DIR 	?= lib
 
 # The package name
-PACKAGE_NAME 		:= rps-cpp
+PACKAGE_NAME 		:= brahms
 # Hard-coded in Dockerfile, do not change
-BINARY				:= rps-cpp
+BINARY				:= brahms
 
 SGX	?= 0
 ifeq ($(SGX), 0)
