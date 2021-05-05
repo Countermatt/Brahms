@@ -35,8 +35,12 @@ RUN apt-get update -q -q && \
 
 RUN source /opt/intel/sgxsdk/environment
 
-RUN cd \
+RUN cd && \
     git clone https://github.com/Countermatt/Brahms.git \
-    cd Brahms
+    cd Brahms/code && \
+    make clean && make
+
+RUN cd build && \
+    ./brahms \
 
 COPY ./etc /etc
