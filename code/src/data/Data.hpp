@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <string>
+#include <functional>
 
 class Data {
 
@@ -14,9 +15,9 @@ class Data {
            mPushView(),
            mPullView(),
            mMyIP("127.0.0.1"),
-           mIdentifiant("nonsgx"){}
-
-
+           mIdentifiant("nonsgx"),
+           mHasher(){}
+           
 
     // - Getters
     std::vector<std::string> GlobalView() { return mGlobalView; }
@@ -28,7 +29,7 @@ class Data {
     std::string Identifiant() { return mIdentifiant; }
 
     std::string HashIdentifiant();
-
+    std::hash<std::string> Hasher() { return mHasher; }
     // Random Element choice
     std::string RandomElement(std::vector<std::string> View);
 
@@ -58,6 +59,7 @@ class Data {
     std::vector<std::string> mStreamView;
     std::string mMyIP;
     std::string mIdentifiant;
+    std::hash<std::string> mHasher;
 
 
 };

@@ -3,11 +3,11 @@
 #include <time.h>
 #include <string>
 #include <vector>
+#include <functional>
 
 #include "data/Data.hpp"
 #include "sha256/SHA256.hpp"
 #include "utils/string.hpp"
-
 using namespace std;
 
 
@@ -47,7 +47,13 @@ void Data::GlobalAdd(std::string element){
   mGlobalView.push_back(element);
 }
 void Data::SamplerAdd(std::string element){
-  mSamplerView.push_back(element);
+  std::hash<std::string> mhash = Hasher();
+  for (int i = 0; i < mSamplerView.size(); i++) {
+    if (mhash(element) > mhash(mSamplerView[i])) {
+            mSamplerView[i] = element;
+            break;
+    }
+  }
 }
 void Data::StreamAdd(std::string element){
   mStreamView.push_back(element);
