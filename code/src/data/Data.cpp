@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <functional>
+#include <iostream>
 
 #include "data/Data.hpp"
 #include "sha256/SHA256.hpp"
@@ -71,6 +72,14 @@ void Data::SamplerRemove(int i){
     }
   }
 }
+
+void Data::DisplayGlobal() {
+  std::vector<std::string> view = GlobalView();
+  for (const auto& element : view) {
+    std::cout << element << " ";
+  }
+  std::cout << std::endl;
+} 
 
 void Data::PullReset(){
   mPullView.clear();

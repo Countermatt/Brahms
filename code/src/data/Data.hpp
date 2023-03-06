@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include <functional>
+#include <iostream>
 
 class Data {
 
@@ -49,7 +50,7 @@ class Data {
 
     void SamplerResize();
 
-
+    void Data::DisplayGlobal();
   private:
 
     std::vector<std::string> mGlobalView;
