@@ -88,6 +88,7 @@ void RPS::sendingThread()      // initiate RPS Request every RPS_SYNC_TIME
   std::cout << "fin sampler \n" << std::endl;
   
   mBrahms.MergeView(al1, bl2, gl3, &mData);
+  std::count << mData.GlobalView() << std::endl
   std::this_thread::sleep_for(std::chrono::milliseconds(1000));
   tour++;
   }
