@@ -50,7 +50,7 @@ class Data {
 
     void SamplerResize();
 
-    void Data::DisplayGlobal();
+    void DisplayGlobal();
   private:
 
     std::vector<std::string> mGlobalView;
